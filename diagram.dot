@@ -1,0 +1,277 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "MyNewInfStack" {
+    subgraph "cluster-SubGraph.MyNewInfStack" {
+      graph [
+        label = "MyNewInfStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
+      ];
+      "MyNewInfStack/MyVpc" [
+        label = " MyVpc",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/AlbSecurityGroup" [
+        label = " AlbSecurityGroup",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/security_group.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/EcsSecurityGroup" [
+        label = " EcsSecurityGroup",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/security_group.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/RdsSecurityGroup" [
+        label = " RdsSecurityGroup",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/security_group.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/DBSecret" [
+        label = " DBSecret",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "MyNewInfStack/MyRDS" [
+        label = " MyRDS",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3-Instance_48_Dark.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/EcsCluster" [
+        label = " EcsCluster",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/ExecutionRole" [
+        label = " ExecutionRole",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "MyNewInfStack/TaskDef" [
+        label = " TaskDef",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "MyNewInfStack/EcsALB" [
+        label = " EcsALB",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      subgraph "cluster-SubGraph.EcsService" {
+        graph [
+          label = "EcsService",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "MyNewInfStack/EcsService/Service" [
+          label = " ECS Service Service",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "MyNewInfStack/EcsService/TaskCount/Target" [
+          label = " Target",
+          fontsize = 12,
+        ];
+      }
+    }
+  }
+  "MyNewInfStack/AlbSecurityGroup" -> "MyNewInfStack/MyVpc" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsSecurityGroup" -> "MyNewInfStack/MyVpc" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsSecurityGroup" -> "MyNewInfStack/AlbSecurityGroup" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsSecurityGroup" -> "MyNewInfStack/RdsSecurityGroup" [
+    dir = "both",
+  ];
+  "MyNewInfStack/RdsSecurityGroup" -> "MyNewInfStack/MyVpc" [
+    dir = "both",
+  ];
+  "MyNewInfStack/RdsSecurityGroup" -> "MyNewInfStack/EcsSecurityGroup" [
+    dir = "both",
+  ];
+  "MyNewInfStack/DBSecret" -> "MyNewInfStack/MyRDS" [
+    dir = "both",
+  ];
+  "MyNewInfStack/MyRDS" -> "MyNewInfStack/MyVpc" [
+    dir = "both",
+  ];
+  "MyNewInfStack/MyRDS" -> "MyNewInfStack/RdsSecurityGroup" [
+    dir = "both",
+  ];
+  "MyNewInfStack/MyRDS" -> "MyNewInfStack/DBSecret" [
+    dir = "both",
+  ];
+  "MyNewInfStack/ExecutionRole" -> "MyNewInfStack/DBSecret" [
+    dir = "both",
+  ];
+  "MyNewInfStack/ExecutionRole" -> "MyNewInfStack/TaskDef" [
+    dir = "both",
+  ];
+  "MyNewInfStack/TaskDef" -> "MyNewInfStack/DBSecret" [
+    dir = "both",
+  ];
+  "MyNewInfStack/TaskDef" -> "MyNewInfStack/MyRDS" [
+    dir = "both",
+  ];
+  "MyNewInfStack/TaskDef" -> "MyNewInfStack/ExecutionRole" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/Service" -> "MyNewInfStack/MyVpc" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/Service" -> "MyNewInfStack/EcsSecurityGroup" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/Service" -> "MyNewInfStack/EcsCluster" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/Service" -> "MyNewInfStack/TaskDef" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/Service" -> "MyNewInfStack/EcsALB" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/TaskCount/Target" -> "MyNewInfStack/EcsService/Service" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsService/TaskCount/Target" -> "MyNewInfStack/EcsCluster" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsALB" -> "MyNewInfStack/MyVpc" [
+    dir = "both",
+  ];
+  "MyNewInfStack/EcsALB" -> "MyNewInfStack/AlbSecurityGroup" [
+    dir = "both",
+  ];
+}
