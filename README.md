@@ -50,7 +50,7 @@ A production-grade LAMP (Linux, Apache, MySQL, PHP) stack implementation on AWS 
 
 ## Architecture Overview
 
-![Architecture Diagram](./assets/architecture-diagram.png)  
+![Architecture Diagram](./assets/architectural-dgm.png)  
 
 
 ## Key Components
