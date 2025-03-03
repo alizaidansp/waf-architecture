@@ -467,6 +467,8 @@ If your EC2 instance does not use an Elastic IP address, update the Jenkins URL 
    ```
 4. Update the webhook URL in GitHub accordingly.
 
+5. Don't forget  to update the Jenkins file's     ECS_CLUSTER = "<CLUSTER_NAME>" and  # ECS_SERVICE = "<SERVICE_NAME>"  each time you deploy your infrastructure
+
 ## Pipeline Verification
 
 ### Verify GitHub Connection

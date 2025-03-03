@@ -349,3 +349,5 @@ class MyLAMPStackCDK(Stack):
 # sudo systemctl restart jenkins
 
 # also got to the repo where the LAMP stack is deployed and update the jenkins url path under webhooks of this repo's settings
+
+# dont forget  to update the Jenkins file's     ECS_CLUSTER = "<CLUSTER_NAME>" and  # ECS_SERVICE = "<SERVICE_NAME>"  each time you deploy your infrastructure
