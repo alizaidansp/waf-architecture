@@ -14,7 +14,7 @@ from constructs import Construct
 from aws_cdk import aws_elasticloadbalancingv2 as elbv2
 from aws_cdk import aws_applicationautoscaling as appscaling
 
-class MyNewInfStack(Stack):
+class MyLAMPStackCDK(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -162,7 +162,7 @@ class MyNewInfStack(Stack):
             secrets=[db_secret],
             security_groups=[rds_proxy_sg],
             debug_logging=True,
-            require_tls=True  # Set to True for production
+            require_tls=False  # Set to True for production
 
             # This ensures secure connections between the  application and the RDS Proxy.
             #  If a client does not support TLS, the connection will be rejected.
@@ -298,11 +298,13 @@ class MyNewInfStack(Stack):
         )
 
         # Outputs
-        cdk.CfnOutput(self, "RDSHost", value=db_instance.db_instance_endpoint_address)
-        cdk.CfnOutput(self, "RDSProxyEndpoint", value=rds_proxy.endpoint)  # Output RDS Proxy endpoint
-        cdk.CfnOutput(self, "DBSecretArn", value=db_secret.secret_arn)
+        cdk.CfnOutput(self, "ALBURL", value=alb.load_balancer_dns_name)
+        
         cdk.CfnOutput(self, "ClusterName", value=cluster.cluster_name)
-        cdk.CfnOutput(self, "EcsServiceURL", value=alb.load_balancer_dns_name)
+        cdk.CfnOutput(self, "EcsServiceName",
+            value=service.service_name,
+            description="The name of the ECS Service"
+        )
 
 
 # Where cloudwatch is used
@@ -330,3 +332,20 @@ class MyNewInfStack(Stack):
 #     --container <container-name-from-cdk-or-aws-console> \
 #     --command "/bin/bash" \
 #     --interactive
+
+# Example
+# aws ecs execute-command \
+#     --cluster MyLAMPStackCDK-EcsCluster97242B84-9Iw5IWf44b4r \
+#     --task 1a7d2ec3a0c2402b99c0cb68ae3b29e7 \
+#     --container AppContainer \
+#     --command "/bin/bash" \
+#     --interactive
+
+
+# after deployment to ECS, update jenkins url path before submitting auto-builds
+
+# updating jenkins url path
+# sudo nano /var/lib/jenkins/jenkins.model.JenkinsLocationConfiguration.xml
+# sudo systemctl restart jenkins
+
+# also got to the repo where the LAMP stack is deployed and update the jenkins url path under webhooks of this repo's settings
