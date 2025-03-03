@@ -62,7 +62,7 @@ class MyLAMPStackCDK(Stack):
             self, "RdsSecurityGroup",
             vpc=vpc,
             description="RDS Security Group",
-            allow_all_outbound=False  # RDS shouldn't initiate connections
+            # allow_all_outbound=False
         )
 
         # RDS Proxy Security Group
