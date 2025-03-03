@@ -427,7 +427,7 @@ This section details how to integrate a private GitHub repository with Jenkins t
 4. Scroll down to the **Pipeline** section:
    - Choose **Pipeline script from SCM**.
    - Select **Git** as the SCM.
-   - Enter your repository URL (e.g., `https://github.com/alizaidansp/docker-lambda.git`).
+   - Enter your repository URL (e.g., `https://github.com/alizaidansp/waf-lamp-repo.git`).
    - Select the GitHub credentials you created.
    - Specify the branch (e.g., `*/main` or `*/master`).
    - Set the **Script Path** to `Jenkinsfile`.
