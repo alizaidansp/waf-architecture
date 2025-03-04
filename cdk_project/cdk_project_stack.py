@@ -335,8 +335,8 @@ class MyLAMPStackCDK(Stack):
 
 # Example
 # aws ecs execute-command \
-#     --cluster MyLAMPStackCDK-EcsCluster97242B84-9Iw5IWf44b4r \
-#     --task 1a7d2ec3a0c2402b99c0cb68ae3b29e7 \
+#     --cluster MyLAMPStackCDK-EcsCluster97242B84-xBBOeWOXACPw  \
+#     --task 01dbfb3ff7c9404382dc952e6d164d40 \
 #     --container AppContainer \
 #     --command "/bin/bash" \
 #     --interactive

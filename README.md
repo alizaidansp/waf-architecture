@@ -1,4 +1,3 @@
-Below is the revised document with a detailed table of contents and well-structured sections covering the infrastructure overview, CDK deployment, Jenkins setup, and GitHub integration.
 
 ---
 
